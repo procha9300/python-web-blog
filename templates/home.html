@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/home_style.css" />
+        <title>Blog Homepage</title>
+    </head>
+
+    <body>
+
+        <header class="navbar">
+
+            <div class="navbar__brand">
+                <a class="navbar__brand-link" href="{{ url_for('home') }}">
+                    <img class="navbar__brand-img" src="static/myblog_logo.svg" alt="myBlog Logo" />myBlog
+                </a>
+            </div>
+
+            <ul class="navbar__navegation">
+                <li class="navbar__navegation-item"><a href="{{ url_for('recent') }}" class="navbar__link">Recent</a></li>
+                <li class="navbar__navegation-item"><a href="{{ url_for('calendar') }}" class="navbar__link">Calendar</a></li>
+            </ul>
+
+        </header>
+
+
+        <main class="main">
+
+            <section>
+                <h1>Add new entry</h1>
+
+                <!-- <form action="/entry" method="POST"> --> <!-- method="GET" : the data is sent throu the URL : file:///C:/entry?sample=SSS -->
+                    <!-- <label for="sample-field">Post:</label>  It has to match the ID of the corresponding input element -->
+                    <!-- <input type="text" name="sample" id="sample-field" /> --> <!-- The name attribute is what the data is going to be called when we send it -->
+                    <!-- <button type="submit">Submit</button> -->
+                    <!-- <input type="submit" /> -->
+                <!-- </form> -->
+
+                <form class="form" action="/" method="POST">  <!-- method="GET" : the data is sent throu the URL : file:///C:/entry?sample=SSS -->
+                    
+                    <p class="form__input"> <!-- It's good to group together labels and its inputs for styling and refering to them -->
+                        <label class="form__label" for="entry">Entry contents:</label> <!-- It has to match the ID of the corresponding input element -->
+                        <textarea class="form__textarea" name="content" id="entry"></textarea>
+                        <!-- aria-label="Entry contents" : is the attribute ps the <textarea> elements that allows you to assign a label to
+                            to the element without showing in the browser. For screenreaders. -->
+                    </p>
+
+                    <button type="submit" class="form__submit">Submit</button>
+                </form>
+
+            </section>
+
+            <section>
+
+                <h1>Recent posts</h1>
+
+                {% for post in entries %}
+                <article class="entry">
+
+                    <div class="entry__header">
+                        <h2 class="entry__header-title">{{ post["content"] | truncate(30, true) }}</h2>
+                        <time class="entry__header-date" datetime="{{ post['date'] }}">• {{ post["formatted_date"] }}</time>
+                    </div>
+
+                    <p class="entry__content">
+                        {{ post["content"] }}
+                    </p>
+
+                </article>
+                {% endfor %}
+
+            </section>
+
+        </main>
+
+
+        <footer class="footer">
+
+            <div class="footer__content">
+
+                <section class="left">
+                    <a class="footer__item" href="#">Made by Pedro Rocha</a>
+                    <a class="footer__item" href="#">My other Projects</a>
+                </section>
+
+                <section class="right">
+                    
+                    <div class="footer__column">
+                        <a class="footer__item" href="#">Recent</a>
+                        <a class="footer__item" href="#">Calendar</a>
+                    </div>
+
+                    <div class="footer__column">
+                        <a class="footer__item" href="#">About</a>
+                        <a class="footer__item" href="#">How this was made</a>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </footer>
+        
+    </body>
+
+</html>
