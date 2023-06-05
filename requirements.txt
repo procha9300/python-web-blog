@@ -3,5 +3,6 @@ pymongo[srv]
 python-dotenv
 gunicorn
 bcrypt
+smtplib
 email==4.0.2
 setuptools==57.0.0
