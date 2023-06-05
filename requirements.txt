@@ -3,4 +3,3 @@ pymongo[srv]
 python-dotenv
 gunicorn
 bcrypt
-email.mime
