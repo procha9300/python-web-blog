@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/error_style.css" />
+        <title>Error page myBlog</title>
+    </head>
+
+    <body>
+        <a class="link" href="{{ url_for('start') }}">
+            <div class="brand__logo">
+                <img class="brand__logo-img" src="/static/myblog_logo.svg" />
+                myBlog
+            </div>
+        </a>
+        <p class="message">{{ error }} : {{ msg }}</p>
+    </body>
+
+    <footer>
+    </footer>
+</html>

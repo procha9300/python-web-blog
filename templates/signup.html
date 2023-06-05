@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/signup_style.css" />
+        <script src="/static/signup.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Sign Up myBlog</title>
+    </head>
+
+    <body>
+        <header class="navbar">
+            <div class="navbar__brand">
+                <a class="navbar__brand-link" href="{{ url_for('start') }}">
+                    <img class="navbar__brand-img" src="/static/myblog_logo.svg" alt="myBlog Logo" />myBlog
+                </a>
+            </div>
+
+            <ul class="navbar__navegation">
+                <li class="navbar__navegation-item"><a href="{{ url_for('recent') }}" class="navbar__link">Recent</a></li>
+                <li class="navbar__navegation-item"><a href="{{ url_for('calendar') }}" class="navbar__link">Calendar</a></li>
+            </ul>
+        </header>
+        
+        <main>
+
+            <section>
+                <form class="form" id="form" action="/signup/" method="POST" onsubmit="return inputValidation();" >
+
+                    <div class="form__name">
+                        <input class="form__input form__name--first" aria-label="First Name" type="text" name="first_name" placeholder="First Name" required/>
+                        <input class="form__input form__name--last" aria-label="Last Name" type="text" name="last_name" placeholder="Last Name" required/>
+                    </div>
+
+                    <div class="form__username">
+                        <input class="form__input form__username--input" type="text" name="username" id="username" placeholder="Username" onchange="checkExistance('username')" required />
+                        <div class="form__username--dialogbox">
+
+                        </div>
+                    </div>
+
+                    <input class="form__input form__email" type="text" name="email" id="email" placeholder="E-mail" onchange="checkExistance('email')" required />
+
+                    <div class="form__password">
+                        <input class="form__input form__password--input" id="form__input-pass" type="password" name="password" placeholder="Password" oninput="showEye()" required/>
+                    </div>
+
+                    <div class="form__password">
+                        <input class="form__input form__password--input" id="form__input-pass2" type="password" name="password2" placeholder="Repeat Password" oninput="showEye()" required/>
+                        <div class="form__input-eye" id="form__input-eye" onclick="showPassword()"></div>
+                    </div>
+
+                    <label class="form__label" for="form__birth">Birth date</label>
+                    <div class="form__birth" id="form__birth">
+                        <select class="form__birth--day" id="day" name="day">
+                            <script>genDays();</script>
+                        </select>
+
+                        <select class="form__birth--month" id="month" name="month">
+                            <script>genMonths();</script>
+                        </select>
+
+                        <select class="form__birth--year" id="year" name="year">
+                            <script>genYears();</script>
+                        </select>
+                    </div>
+
+                    <label class="form__label" for="form__gender">Gender</label>
+                    <div class="form__gender" id="form__gender">
+                        <label>
+                            <input class="form__gender--input" type="radio" name="gender" value="Male">
+                            Male
+                        </label>
+                        <label>
+                            <input class="form__gender--input" type="radio" name="gender" value="Female">
+                            Female
+                        </label>
+                    </div>
+
+                    <button class="form__button" id="form__button-signup" type="submit">Create Account</button>
+
+                </form>
+            </section>
+
+        </main>
+
+        <footer></footer>
+
+    </body>
+</html>

@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 24px;
+    font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, sans-serif;
+}
+
+body {
+    margin: 20px auto 50px auto;
+    padding: 0 20px;
+}
+
+.link {
+    text-decoration: none;
+    display: inherit;
+    align-items: inherit;
+    color: inherit;
+}
+
+.brand__logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.brand__logo-img {
+    margin-right: 14px;
+    width: 75px;
+    height: auto;
+}
+
+.message {
+    font-size: 120%;
+    font-weight: bold;
+    color:rgb(9, 91, 24)
+}

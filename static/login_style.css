@@ -1,0 +1,128 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, sans-serif;
+    font-size: 17px;
+}
+
+.main {
+    min-width: 500px;
+    max-width: 750px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    padding: 175px 10px;
+    align-items: center;
+}
+
+.brand {
+    max-width: 325px;
+    min-width: 250px;
+    margin-right: 75px;
+    font-size: 23px;
+    line-height: 150%;
+}
+
+.brand__logo {
+    display: flex;
+    font-size: 26px;
+    align-items: center;
+}
+
+.brand__logo-img {
+    width:20%;
+    height: auto;
+    margin-right: 10px;
+}
+
+.form {
+    max-width: 375px;
+    min-width: 325px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 25px;
+    background-color: #e8ffe8;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+.form__input {
+    width: 275px;
+    margin-bottom: 20px;
+    font-size: inherit;
+    border-radius: 5px;
+    padding: 14px 16px;
+    border: 1px solid #dddfe2;
+}
+
+.form__input::placeholder {
+    color:rgb(190, 190, 190);
+}
+
+#form__input-pass {
+    margin-bottom: 0;
+}
+
+.password_input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form__input-eye {
+    height: 16px;
+    width: 16px;
+    background: url(/static/eye.svg);
+    position: absolute;
+    margin-left: 241px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.form__recover{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 14px auto 20px auto;
+    text-decoration: none;
+    color:#026f27c4;
+}
+
+.form__recover:hover {
+    text-decoration: underline;
+}
+
+.form__button {
+    display: block;
+    width: 275px;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 8px 0;
+    background-color: #026f27c4;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.form__button:hover {
+    background-color:  #0e8034c4;
+}
+
+#form__button-signup {
+    width: fit-content;
+    padding: 8px 20px;
+    margin: 0 auto;
+}
+
+.form__line {
+    height: 1px;
+    background-color: #175c5e59;
+    margin-bottom: 28px;
+}

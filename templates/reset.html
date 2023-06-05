@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/reset_style.css" />
+        <script src="/static/reset.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Recover Password myBlog</title>
+    </head>
+        <header></header>
+
+        <main>
+            <section>
+                <form class="form" id="form" action="/reset/" method="POST" onsubmit="return inputValidation();" >
+
+                    <p class="form__title">Recover Password</p>
+
+                    <input class="form__input form__username--input" type="text" name="username" id="username" placeholder="username" onchange="checkExistance('username')" required />
+
+                    <button class="form__button" id="form__button-signup" type="submit">Send Email</button>
+
+                </form>
+            </section>
+        </main>
+
+        <footer></footer>
+    <body>
+        
+    </body>
+</html>

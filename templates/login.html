@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/login_style.css" />
+        <script src="/static/login.js"></script>
+        <title>myBlog Login</title>
+    </head>
+
+    <body>
+        <header></header>
+
+        <main class="main">
+
+            <section class="brand">
+
+                <div class="brand__logo">
+                    <img class="brand__logo-img" src="/static/myblog_logo.svg" />
+                    myBlog
+                </div>
+
+                <p class="brand__phrase">
+                    The myBlog will help you keep track of your daily activities. 
+                </p>
+
+            </section>
+
+            <section class="form">
+
+                <form action="/" method="POST">
+                    <input class="form__input" type="text" name="username" placeholder="username" required />
+
+                    <div class="password_input">
+                        <input class="form__input" id="form__input-pass" type="password" name="password" placeholder="password" oninput="showEye()" required />
+                        <div class="form__input-eye" id="form__input-eye" onclick="showPassword()"></div>
+                    </div>
+
+                    <button class="form__button" type="submit">Log In</button>
+                </form>
+
+                <a class="form__recover" href="/reset/">Forgot your password?</a>
+
+                <div class="form__line"></div>
+
+                <form action="/signup" method="GET">
+                    <button class="form__button" id="form__button-signup" type="submit">Create Account</button>
+                </form>
+
+            </section>
+
+        </main>
+
+        <footer></footer>
+        
+    </body>
+
+</html>

@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, sans-serif;
+    font-size: 18px;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.form {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    padding: 30px 25px;
+    border-radius: 5px;
+    background-color: #e8ffe8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);  
+}
+
+.form__title {
+    display: flex;
+    margin: 0 auto 20px auto;
+    font-size: 24px;
+    font-weight: 700;
+    color: #026f27c4;
+}
+
+.form__input {
+    width: 100%;
+    font-size: inherit;
+    border-radius: 5px;
+    padding: 14px 16px;
+    border: 1px solid #dddfe2;
+}
+
+.form__username--input {
+    margin-bottom: 20px;
+}
+
+.form__input::placeholder {
+    color:rgb(190, 190, 190);
+}
+
+.form__button {
+    font-size: 20px;
+    width: fit-content;
+    padding: 8px 20px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #026f27c4;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.form__username {
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    color: #026f27c4;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.form__username-input {
+    display: inline-block;
+    border: none;
+    background-color: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    color: inherit;
+}
+
+.form__username-input:focus {
+    outline: none;
+    border: none;
+}
+
+.password_input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form__input-eye {
+    height: 16px;
+    width: 16px;
+    background: url(/static/eye.svg);
+    position: absolute;
+    margin-left: 300px;
+    cursor: pointer;
+    visibility: hidden;
+}

@@ -88,6 +88,8 @@ body {
 
 .navbar__brand-img {
     margin-right: 12px;
+    width: 55px;
+    height: auto;
 }
 
 .navbar__navegation {

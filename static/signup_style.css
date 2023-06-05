@@ -1,0 +1,180 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, sans-serif;
+    font-size: 18px;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.form {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px 25px;
+    border-radius: 5px;
+    background-color: #e8ffe8;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);  
+}
+
+.form__input {
+    font-size: inherit;
+    border-radius: 5px;
+    padding: 14px 16px;
+    border: 1px solid #dddfe2;
+    margin-bottom: 20px;
+}
+
+.form__input::placeholder {
+    color:rgb(190, 190, 190);
+}
+
+.form__name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form__name--first, .form__name--last {
+    width: 48%;
+}
+
+.form__password {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form__input-eye {
+    height: 16px;
+    width: 16px;
+    background: url(/static/eye.svg);
+    position: absolute;
+    margin-left: 350px;
+    margin-bottom: 17px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.form__password--input, .form__username--input{
+    width: 100%;
+}
+
+.form__birth {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.form__label {
+    font-size: 14px;
+    color: rgb(140, 140, 140);
+}
+
+.form__birth--day, .form__birth--month, .form__birth--year {
+    font-size: inherit;
+    border-radius: 5px;
+    border: 1px solid #dddfe2;
+    padding: 14px 16px;
+}
+
+.form__birth--day {
+    flex-grow: 0.6;
+    margin-right: 10px;
+}
+
+.form__birth--month {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.form__birth--year {
+    flex-grow: 0.75;
+}
+
+.form__button {
+    font-size: 20px;
+    width: fit-content;
+    padding: 8px 20px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #026f27c4;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.form__button:hover {
+    background-color:  #0e8034c4;
+}
+
+.form__gender {
+    margin-bottom: 20px;
+}
+
+.form__username {
+    display: flex;
+    flex-direction: row;
+}
+/*
+.form__username--dialogbox {
+    height: 30px;
+    width: 20px;
+    background-color: red;
+    border-radius: 5px;
+} */
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    /* width: 640px; */
+    max-width: 640px;
+    height: 50px;
+    margin: 50px auto;
+    padding: 0 20px;
+    justify-content: space-between; /* Largest space possible between elements */
+    font-size: 24px;
+}
+
+.navbar__brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__brand-link {
+    text-decoration: none;
+    display: inherit;
+    align-items: inherit;
+    color: inherit;
+}
+
+.navbar__brand-img {
+    margin-right: 12px;
+    width: 55px;
+    height: auto;
+}
+
+.navbar__navegation {
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    color: #5c6b70;
+}
+
+.navbar__navegation-item {
+    margin-left: 50px;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: inherit;
+}

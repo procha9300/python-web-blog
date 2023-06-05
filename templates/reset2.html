@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/reset_style.css" />
+        <script src="/static/reset.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Recover Password myBlog</title>
+    </head>
+        <header></header>
+
+        <main>
+            <section>
+                <form class="form" id="form" action="/reset/recover/" method="POST" onsubmit="return newPwValidation();" >
+
+                    <p class="form__username"><input class="form__username-input" id="form__username-input" name="username" value="{{ username }}" readonly/></p>
+
+                    <div class="password_input">
+                        <input class="form__input" id="form__input-pass" type="password" name="password" placeholder="password" oninput="showEye()" required />
+                    </div>
+                    <div class="password_input">
+                        <input class="form__input" id="form__input-pass2" type="password" name="password2" placeholder="repeat password" oninput="showEye()" required />
+                        <div class="form__input-eye" id="form__input-eye" onclick="showPassword()"></div>
+                    </div>
+                    <button class="form__button" id="form__button-submit" type="submit">Change Password</button>
+                </form>
+            </section>
+        </main>
+
+        <footer></footer>
+    <body>
+        
+    </body>
+</html>

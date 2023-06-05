@@ -3,10 +3,12 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8">  
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="static/home_style.css" />
+        <link rel="stylesheet" href="/static/home_style.css" />
+        <script src="/static/home.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <title>Blog Homepage</title>
     </head>
 
@@ -16,13 +18,13 @@
 
             <div class="navbar__brand">
                 <a class="navbar__brand-link" href="{{ url_for('home') }}">
-                    <img class="navbar__brand-img" src="static/myblog_logo.svg" alt="myBlog Logo" />myBlog
+                    <img class="navbar__brand-img" src="/static/myblog_logo.svg" alt="myBlog Logo" />myBlog
                 </a>
             </div>
 
             <ul class="navbar__navegation">
-                <li class="navbar__navegation-item"><a href="{{ url_for('recent') }}" class="navbar__link">Recent</a></li>
-                <li class="navbar__navegation-item"><a href="{{ url_for('calendar') }}" class="navbar__link">Calendar</a></li>
+                <li class="navbar__navegation-item"><a href="{{ url_for('home') }}" class="navbar__link">{{ username }}</a></li>
+                <li class="navbar__navegation-item"><a href="{{ url_for('logout') }}" class="navbar__link">Logout</a></li>
             </ul>
 
         </header>
@@ -40,11 +42,11 @@
                     <!-- <input type="submit" /> -->
                 <!-- </form> -->
 
-                <form class="form" action="/" method="POST">  <!-- method="GET" : the data is sent throu the URL : file:///C:/entry?sample=SSS -->
+                <form class="form" action="/home" method="POST" onsubmit="return accountValidation();">  <!-- method="GET" : the data is sent throu the URL : file:///C:/entry?sample=SSS -->
                     
                     <p class="form__input"> <!-- It's good to group together labels and its inputs for styling and refering to them -->
                         <label class="form__label" for="entry">Entry contents:</label> <!-- It has to match the ID of the corresponding input element -->
-                        <textarea class="form__textarea" name="content" id="entry"></textarea>
+                        <textarea class="form__textarea" name="content" id="entry" onchange="dataVal()"></textarea>
                         <!-- aria-label="Entry contents" : is the attribute ps the <textarea> elements that allows you to assign a label to
                             to the element without showing in the browser. For screenreaders. -->
                     </p>

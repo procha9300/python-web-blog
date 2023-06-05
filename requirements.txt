@@ -2,3 +2,6 @@ flask
 pymongo[srv]
 python-dotenv
 gunicorn
+bcrypt
+email.mime.text
+email.mime.multipart
